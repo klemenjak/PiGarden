@@ -2,8 +2,8 @@ import dropbox
 
 
 def init_dropbox():
-    with open ("dropbox_handler.txt", "r") as myfile:
-    token=myfile.readlines()
+    with open ("dropbox_token.txt", "r") as myfile:
+        token=myfile.read().replace('\n', '')
     return dropbox.Dropbox(token)
 
 
