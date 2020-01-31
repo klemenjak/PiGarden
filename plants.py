@@ -1,4 +1,6 @@
 from picamera import PiCamera
+from datetime import datetime
+
 from time import sleep
 
 camera = PiCamera()
@@ -9,7 +11,7 @@ for i in range(10):
 	camera.start_preview()
 	camera.annotate_text = "Hellas!"
 	sleep(5)
-	camera.capture('pics/plants/image%s.jpg' % i)
+	now = datetime.now()
+	camera.capture('pics/plants/%s.jpg' % now.strftime("%Y-%m-%d_%H:%M:%S"))
 	camera.stop_preview()
-
-
+	
