@@ -7,5 +7,5 @@ sudo apt-get install python-picamera
 ```
 
 ```bash
-
+pip install dropbox
 ```
