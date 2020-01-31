@@ -9,3 +9,6 @@ sudo apt-get install python-picamera
 ```bash
 pip install dropbox
 ```
+
+create Dropbox App:
+https://www.dropbox.com/developers/apps
