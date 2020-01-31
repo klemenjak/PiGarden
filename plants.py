@@ -12,8 +12,6 @@ dbox = init_dropbox()
 
 while True:
 	camera.start_preview()
-	sleep(60)
-
 	now = datetime.now()
 	camera.annotate_text = ctime()
 
@@ -26,3 +24,4 @@ while True:
 	chdir('../pics/plants/')
 	upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
 	chdir('../../PiGarden/')
+	sleep(3600)
