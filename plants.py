@@ -1,3 +1,4 @@
+from os import chdir
 from time import sleep
 from picamera import PiCamera
 from datetime import datetime
@@ -18,6 +19,6 @@ while True:
 	image_file = '../pics/plants/{}.jpg'.format(annotation)
 	camera.capture(image_file)
 	camera.stop_preview()
-	cd '../pics/plants/'
+	chdir('../pics/plants/')
 	upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
-	cd '../PiGarden/'
+	chdir('../PiGarden/')
