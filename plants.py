@@ -18,4 +18,6 @@ while True:
 	image_file = '../pics/plants/{}.jpg'.format(annotation)
 	camera.capture(image_file)
 	camera.stop_preview()
-	upload_file(dbox, image_file, '/PiGarden/')
+	cd '../pics/plants/'
+	upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
+	cd '../PiGarden/'
