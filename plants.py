@@ -22,6 +22,11 @@ while True:
 	camera.stop_preview()
 
 	chdir('../pics/plants/')
-	upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
+
+	try:
+		upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
+	except ConnectionError:
+		pass
+
 	chdir('../../PiGarden/')
 	sleep(3600)
