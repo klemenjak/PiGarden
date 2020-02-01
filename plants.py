@@ -3,6 +3,8 @@ from time import sleep, ctime
 from picamera import PiCamera
 from datetime import datetime
 
+from requests.exceptions import ConnectionError
+
 from dpbox_handler import *
 
 camera = PiCamera()
@@ -26,6 +28,7 @@ while True:
 	try:
 		upload_file(dbox, '{}.jpg'.format(annotation), '/PiGarden/')
 	except ConnectionError:
+		print "Connection Error handled"
 		pass
 
 	chdir('../../PiGarden/')
